@@ -50,7 +50,7 @@ module Restforce
         builder.use Faraday::Request::UrlEncoded
         builder.use Restforce::Middleware::Mashify, nil, @options
         builder.use Faraday::FollowRedirects::Middleware
-        builder.response :restforce_json
+        builder.response :json
 
         if Restforce.log?
           builder.use Restforce::Middleware::Logger,
